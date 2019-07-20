@@ -134,7 +134,7 @@ main()
 			}
 		
 			p("\nThe Decimal Equivalent is: %ld\n", decimal_num);
-			p("The Hexadecimal Equivalent is: %ld\n", hexa);
+			p("The Hexadecimal Equivalent is: %lx\n", hexa);
 			
 		}
 		
@@ -315,7 +315,7 @@ main()
 			}
 			
 			p("\nThe Octal Equivalent is: %ld\n", octal_num);
-			p("The Hexadecimal Equivalent is: %ld\n", hexa);
+			p("The Hexadecimal Equivalent is: %lx\n", hexa);
 				
 			
 		}
@@ -391,7 +391,7 @@ main()
 			
 			}
 		
-			p("\nThe Hexadecimal Equivalent is: %ld\n", hexa_num);
+			p("\nThe Hexadecimal Equivalent is: %lx\n", hexa_num);
 			p("The Binary Equivalent is: %ld\n", binary);
 						
 		}
@@ -431,7 +431,7 @@ main()
 			
 			}			
 			
-			p("The Hexadecimal Equivalent is: %ld\n", hexa_num);
+			p("The Hexadecimal Equivalent is: %lx\n", hexa_num);
 			p("The Octal Equivalent is: %ld\n", octal);
 		}
 		
