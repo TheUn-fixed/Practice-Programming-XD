@@ -494,6 +494,8 @@ main()
 	while (toupper(close) != 'N' && toupper(close) == 'Y')
 	{
 		
+		long long int decimal =0, binary = 0, base = 1, octal = 0, hexa = 0;
+		
 		//Objects start
 		number_system_input();
 		//Objects end
