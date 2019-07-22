@@ -9,7 +9,9 @@
 //This program converts Decimal to Binary and vv
 
 //Initialization of Long Integers
-long long int num, decimal_num, binary_num, decimal =0, binary = 0, quotient, rem, base = 1, octal = 0, octal_num, hexa = 0, hexa_num, hexa_digit;
+long long int num, decimal_num, binary_num, quotient, rem, octal_num, hexa_num, hexa_digit;
+//Initialization of Valued Long Integers
+long long int decimal = 0, binary = 0, octal = 0, hexa = 0, base =1;
 //Initialization of Number System input
 char ns_input;
 //Initialization of Number System ouput
@@ -72,6 +74,13 @@ void stop()
 	p("\nWould you like to convert another number? Y or N\t");
 		s(" %c", &close);	
 		
+	
+}
+
+void debug()
+{
+	
+	p("Decimal: %llx", decimal);
 	
 }
 
@@ -437,38 +446,12 @@ main()
 		{
 			
 			input_hexa();
+			
 			hexa_num = hexa_digit;
-		
-			while (hexa_digit > 0)
-			{
-		
-				rem = hexa_digit % 10;
-				decimal += rem * base;
-				hexa_digit /= 10;
-				base *= 16;
-				
-				if (hexa_digit == 0)
-				{
-					
-					break;
-					
-				}
-			}
+
 			
-			base = 1;
-			
-			while (decimal > 0)
-			{
-		
-				rem = decimal % 8;
-				octal += rem * base;
-				decimal /= 8;
-				base *= 10;
-			
-			}			
-			
-			p("The Hexadecimal Equivalent is: %lld\n", hexa_num);
-			p("The Octal Equivalent is: %lld\n", octal);
+			p("The Hexadecimal Equivalent is: %llx\n", hexa_num);
+			p("The Octal Equivalent is: %llo\n", hexa_num);
 		}
 		
 		//Invalid Input
@@ -494,15 +477,15 @@ main()
 	while (toupper(close) != 'N' && toupper(close) == 'Y')
 	{
 		
-		long long int decimal =0, binary = 0, base = 1, octal = 0, hexa = 0;
+			long long int decimal =0, binary = 0, base = 1, octal = 0, hexa = 0;
 		
-		//Objects start
-		number_system_input();
-		//Objects end
+			//Objects start
+			number_system_input();
+			//Objects end
 	
-		//Decimal to Any Other Number System Conversion
-		if (toupper(ns_input) == 'D')
-		{
+			//Decimal to Any Other Number System Conversion
+			if (toupper(ns_input) == 'D')
+			{
 		
 			//Prompt to choose what output
 			p("\nWhat Number System do you want to convert to? ");
@@ -576,11 +559,11 @@ main()
 				p("The Hexadecimal Equivalent is: %llx\n", hexa);
 			
 			}
-		
+			
 			//Invalid Input
 			else
 			{
-			
+				
 				p("\nInvalid Input!\n");
 			
 			}
@@ -602,7 +585,7 @@ main()
 		
 				input();
 				binary_num = num;
-		
+			
 				while (num > 0)
 				{
 		
@@ -634,7 +617,7 @@ main()
 					num /= 10;
 				
 				}
-		
+			
 				p("\nThe Binary Equivalent is: %lld\n", binary_num);
 				p("The Octal Equivalent is: %llo\n", octal);
 			
@@ -646,17 +629,17 @@ main()
 			
 				input();
 				binary_num = num;
-			
+		
 				while (num > 0)
 				{
-			
+		
 					rem = num % 10;
 					hexa += rem * base;
 					base *= 2;
 					num /= 10;
 			
 				}
-		
+			
 				p("\nThe Binary Equivalent is: %lld\n", binary_num);
 				p("The Hexadecimal Equivalent is: %llx\n", hexa);
 			
@@ -666,16 +649,16 @@ main()
 			else 
 			{
 				p("\nInvalid Input!\n");
-			
+				
 			}	
-	
+
 		
 		}
 	
 		//Octal to Any Other Number System Conversion
 		else if (toupper(ns_input) == 'O')
 		{
-			
+		
 			//Prompt to choose what output
 			p("\nWhat Number System do you want to convert to? ");
 				s(" %c", &ns_output);
@@ -687,7 +670,7 @@ main()
 				input();
 				octal_num = num;
 		
-				while (num > 0)
+					while (num > 0)
 				{
 		
 					rem = num % 10;
@@ -713,10 +696,10 @@ main()
 				while (num > 0)
 				{
 		
-				rem = num % 10;
-				binary += octalDigitToBinary[rem] * base;
-				num /= 10;
-				base *= 1000;
+					rem = num % 10;
+					binary += octalDigitToBinary[rem] * base;
+					num /= 10;
+					base *= 1000;
 			
 				}
 		
@@ -728,7 +711,7 @@ main()
 			//Octal to Hexadecimal Conversion
 			else if (toupper(ns_output) == 'H')
 			{
-				
+			
 				input();
 				octal_num = num;
 				
@@ -760,7 +743,7 @@ main()
 					base *= 10;
 			
 				}
-				
+			
 				p("\nThe Octal Equivalent is: %lld\n", octal_num);
 				p("The Hexadecimal Equivalent is: %lld\n", hexa);
 				
@@ -804,7 +787,7 @@ main()
 			
 				p("\nThe Hexadecimal Equivalent is: %llx\n", hexa_num);
 				p("The Decimal Equivalent is: %llx\n", decimal);
-				
+			
 			}
 		
 			//Hexadecimal to Binary Conversion
@@ -852,38 +835,12 @@ main()
 			{
 			
 				input_hexa();
+			
 				hexa_num = hexa_digit;
-		
-				while (hexa_digit > 0)
-				{
-		
-					rem = hexa_digit % 10;
-					decimal += rem * base;
-					hexa_digit /= 10;
-					base *= 16;
-				
-					if (hexa_digit == 0)
-					{
-					
-						break;
-					
-					}
-				}
+
 			
-				base = 1;
-			
-				while (decimal > 0)
-				{
-		
-					rem = decimal % 8;
-					octal += rem * base;
-					decimal /= 8;
-					base *= 10;
-			
-				}			
-			
-				p("The Hexadecimal Equivalent is: %lld\n", hexa_num);
-				p("The Octal Equivalent is: %lld\n", octal);
+				p("The Hexadecimal Equivalent is: %llx\n", hexa_num);
+				p("The Octal Equivalent is: %llo\n", hexa_num);
 			}
 		
 			//Invalid Input
